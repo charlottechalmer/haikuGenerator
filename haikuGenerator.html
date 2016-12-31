@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>About Me Haiku Generator</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://use.fontawesome.com/111e261a7c.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<style type="text/css">
+		body {
+			padding-top: 2em;
+		}
+		#haiku {
+			margin-top: 1em;
+			height: 100%;
+			text-align: center;
+		}
+		.text {
+			text-align: center;
+			font-family: 'Raleway', Helvetica, sans-serif;
+		}
+		#haikuButton {
+			margin-top: 1em;
+		}
+		.aboutMeIcons {
+			padding-top: 3em;
+			text-align: center;
+		}
+		.fa {
+			margin: 0.5em;
+		}
+		.aboutMeIcons p {
+			font-size: 0.6em;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<h2 class="text">Why You Should Hire Charlotte: A Haiku</h2>
+	
+	<div id="haiku">
+		<div id="lineOne" class="text"></div>
+		<div id="lineTwo" class="text"></div>
+		<div id="lineThree" class="text"></div>
+		<input id="haikuButton" type="button" value="Generate!" class="text" />
+		<br>
+		<a href=""><i class="fa fa-github"></i></a>
+
+	</div>
+
+	<div class="aboutMeIcons text">
+		<p>Hover for quick facts about Charlotte</p>
+		<i class="fa fa-certificate" data-toggle="tooltip" data-placement="bottom" title="Professional certification in full-stack web development"></i>
+		<i class="fa fa-graduation-cap" data-toggle="tooltip" data-placement="bottom" title="Bachelor's Degree in Psychology"></i>
+		<i class="fa fa-map-marker" data-toggle="tooltip" data-placement="bottom" title="Based in Boulder, Colorado"></i>
+		<i class="fa fa-globe" data-toggle="tooltip" data-placement="bottom" title="Open to relocating for the perfect opportunity"></i>
+		<a href="http://www.charlottechalmer.me"><i class="fa fa-plus-square" data-toggle="tooltip" data-placement="bottom" title="Click to learn more at my personal website!"></i></a>
+		<a href="mailto:charlotte.taylor7693@gmail.com"><i class="fa fa-envelope-o" data-toggle="tooltip" data-placement="bottom" title="Click to send Charlotte an email!"></i></a>
+	</div>
+
+	<script>
+
+	// $(document).ready(function() {
+	// 	generate();
+	// });
+ 	
+ 	$('[data-toggle=tooltip]').tooltip();
+
+	$("#haikuButton").click(function() {
+		generate();
+	});
+
+	function generate() {
+		var fiveLineOne = ["Excited to code,", "MEAN stack proficient,", "JavaScript is king,", "Plays nice with others,", "Thrives under pressure,", "Thirsty for knowledge,", "Always smiling,", "Eager to learn more,", "Ready to jump in,", "Multifaceted,", "I'm a fast learner,", "A people person,", "I am self-driven,", "Always flexible,"];
+		var sevenLineTwo = ["I'd be a great addition,", "Incredibly hardworking,", "An asset to any team,", "I have a strong work ethic,", "Great communication skills,", "Come on and email me back!", "Coding > haikus,", "Passionate about web dev,", "I am ever curious,", "Gives 110%,", "Ready for this adventure,"];
+		var fiveLineThree = ["You should hire me!", "Let me join your team!", "I won't disappoint", "Can't wait to hear back!", "Inbox is waiting!", "Offer me a job!", "Need I say much more?!", "I will fit right in!", "Shoot me an email!", "Ready to join you!"];
+
+		var line1 = (Math.floor(Math.random() *fiveLineOne.length));
+		var line2 = (Math.floor(Math.random() *sevenLineTwo.length));
+		var line3 = (Math.floor(Math.random() *  fiveLineThree.length));
+
+		$("#lineOne").empty().append(fiveLineOne[line1]);
+		$("#lineTwo").empty().append(sevenLineTwo[line2]);
+		$("#lineThree").empty().append(fiveLineThree[line3]);
+	}
+
+	</script>
+
+</body>
+</html>
